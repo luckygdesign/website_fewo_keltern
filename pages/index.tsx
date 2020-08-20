@@ -196,12 +196,12 @@ export default function Home() {
               >
                 <input type="hidden" name="form-name" value="kontaktformular" />
                 <div>
-                  <label htmlFor="full_name" className="sr-only">
+                  <label htmlFor="name" className="sr-only">
                     Vor- und Nachname
                   </label>
                   <div className="relative rounded-md shadow-sm">
                     <input
-                      id="full_name"
+                      id="name"
                       name="name"
                       className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                       placeholder="Vor- und Nachname"
