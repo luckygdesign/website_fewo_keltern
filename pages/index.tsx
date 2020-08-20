@@ -182,12 +182,17 @@ export default function Home() {
           </div>
           <div className="bg-white py-8 px-4 sm:px-6 lg:col-span-3 lg:py-16 lg:px-8 xl:pl-12">
             <div className="max-w-lg mx-auto lg:max-w-none">
+              <div className="hidden">
+                <Link href="/danke">
+                  <a aria-hidden={true}>zur Bestätigungsseite</a>
+                </Link>
+              </div>
               <form
                 name="kontaktformular"
                 className="grid grid-cols-1 gap-y-6"
                 data-netlify="true"
                 method="post"
-                action="#"
+                action="/danke"
               >
                 <input type="hidden" name="form-name" value="kontaktformular" />
                 <div>
@@ -210,6 +215,7 @@ export default function Home() {
                     <input
                       id="email"
                       type="email"
+                      name="email"
                       className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                       placeholder="E-Mailadresse"
                     />
@@ -222,6 +228,7 @@ export default function Home() {
                   <div className="relative rounded-md shadow-sm">
                     <input
                       id="phone"
+                      name="phone"
                       className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                       placeholder="Telefonnummer"
                     />
@@ -233,7 +240,8 @@ export default function Home() {
                   </label>
                   <div className="relative rounded-md shadow-sm">
                     <input
-                      id="phone"
+                      id="anreise"
+                      name="anreise"
                       className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                       placeholder="Anreisetag (z.B. 5. November 2020)"
                     />
@@ -246,6 +254,7 @@ export default function Home() {
                   <div className="relative rounded-md shadow-sm">
                     <input
                       id="abreise"
+                      name="abreise"
                       className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                       placeholder="Abreisetag (z.B. 9. November 2020)"
                     />
@@ -258,6 +267,7 @@ export default function Home() {
                   <div className="relative rounded-md shadow-sm">
                     <textarea
                       id="message"
+                      name="nachricht"
                       rows={4}
                       className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
                       placeholder="Ihre Nachricht..."
