@@ -31,7 +31,7 @@ export default function Home() {
               <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <a
-                    href="#"
+                    href="#kontakt"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
                   >
                     Jetzt anfragen
@@ -90,17 +90,159 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="py-32 bg-gray-700 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 mb-12 lg:mb-0">
+            <div style={{ columnCount: 3 }} className="space-y-3">
+              {images.map((a, i) => (
+                <ImageThumb {...a} key={i} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="py-16 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 mb-12 lg:mb-0">
-            <h3 className="text-lg leading-6 font-medium text-gray-900 py-6">
-              Ausstattung
-            </h3>
-
             <div className="md:grid md:grid-cols-3 md:gap-6">
               {ausstattungItems.map((a, i) => (
                 <AusstattungItem {...a} key={i} />
               ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative bg-white">
+        <div className="absolute inset-0">
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
+        </div>
+        <div
+          className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5"
+          id="kontakt"
+        >
+          <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
+            <div className="max-w-lg mx-auto">
+              <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
+                Unverbindlich Anfragen
+              </h2>
+              <dl className="mt-8 text-base leading-6 text-gray-500">
+                <div>
+                  <dt className="sr-only">Postadresse</dt>
+                  <dd>
+                    <p>Johannes und Karin Becker</p>
+                    <p>Weinbergstr. 10</p>
+                    <p>75210 Keltern</p>
+                  </dd>
+                </div>
+                <div className="mt-6">
+                  <dt className="sr-only">Telefon</dt>
+                  <dd className="flex">
+                    <svg
+                      className="flex-shrink-0 h-6 w-6 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                    <span className="ml-3">07236/8222</span>
+                  </dd>
+                </div>
+                <div className="mt-3">
+                  <dt className="sr-only">Email</dt>
+                  <dd className="flex">
+                    <svg
+                      className="flex-shrink-0 h-6 w-6 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="ml-3">info(at)cafe-becker.de</span>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
+            <div className="max-w-lg mx-auto lg:max-w-none">
+              <form
+                action="#"
+                method="POST"
+                className="grid grid-cols-1 row-gap-6"
+              >
+                <div>
+                  <label htmlFor="full_name" className="sr-only">
+                    Vor- und Nachname
+                  </label>
+                  <div className="relative rounded-md shadow-sm">
+                    <input
+                      id="full_name"
+                      className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                      placeholder="Vor- und Nachname"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="sr-only">
+                    E-Mail
+                  </label>
+                  <div className="relative rounded-md shadow-sm">
+                    <input
+                      id="email"
+                      type="email"
+                      className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                      placeholder="E-Mailadresse"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="phone" className="sr-only">
+                    Telefon
+                  </label>
+                  <div className="relative rounded-md shadow-sm">
+                    <input
+                      id="phone"
+                      className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                      placeholder="Telefonnummer"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="message" className="sr-only">
+                    Nachricht
+                  </label>
+                  <div className="relative rounded-md shadow-sm">
+                    <textarea
+                      id="message"
+                      rows={4}
+                      className="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                      placeholder="Ihre Nachricht..."
+                    ></textarea>
+                  </div>
+                </div>
+                <div className="">
+                  <span className="inline-flex rounded-md shadow-sm">
+                    <button
+                      type="submit"
+                      className="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                    >
+                      Absenden
+                    </button>
+                  </span>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -196,5 +338,29 @@ const AusstattungItem = (item: IAusstattungItem) => (
         ))}
       </ul>
     )}
+  </div>
+);
+
+type IImage = {
+  alt: string;
+  src: string;
+};
+
+const images: IImage[] = [
+  { src: "img01.jpg", alt: "Esstisch mit 2 Stühlen und Bank" },
+  { src: "img03.jpg", alt: "Küche" },
+  { src: "img06.jpg", alt: "Sideboard" },
+  { src: "img09.jpg", alt: "Sofa" },
+  { src: "img13.jpg", alt: "Waschbecken mit Spiegel und Ablage" },
+  { src: "img14.jpg", alt: "moderne, barrierefreie Dusche" },
+  { src: "img17.jpg", alt: "Sofa als Bett" },
+  { src: "img16.jpg", alt: "Fenster im Wohnzimmer" },
+  { src: "img18.jpg", alt: "Dachterasse" },
+  { src: "img20.jpg", alt: "Eingang zum Bad" },
+];
+
+const ImageThumb = (img: IImage) => (
+  <div className="rounded-lg  overflow-hidden self-start">
+    <img src={`/img/${img.src}`} alt={img.alt} />
   </div>
 );
