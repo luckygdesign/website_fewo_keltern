@@ -16,10 +16,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>Ferienwohnung in Keltern</title>
+        <meta
+          name="description"
+          content="Ferienwohnung für zwei Personen im Weinbaugebiet Keltern (in der Nähe von Pfrozheim und dem Nordschwarzwald). Mit ausgestatteter Küche, WLAN und Parkplatz."
+        />
+      </Head>
       <div className="relative lg:bg-gray-200">
         <main className="lg:relative">
           <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
@@ -249,7 +257,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="phone" className="sr-only">
+                  <label htmlFor="abreise" className="sr-only">
                     Abreisetag
                   </label>
                   <div className="relative rounded-md shadow-sm">
@@ -291,13 +299,13 @@ export default function Home() {
         </div>
         <div className="max-w-screen-xl mx-auto py-8 px-4 sm:px-6 lg:py-8 lg:px-8">
           <div className="mt-8 border-t border-gray-600 pt-8 md:flex md:items-center md:justify-between">
-            <p className="mt-8 text-base leading-6 text-gray-400 md:mt-0 md:order-1">
+            <p className="mt-8 text-base leading-6 text-gray-300 md:mt-0 md:order-1">
               &copy; 2020 Johannes und Karin Becker
             </p>
             <Link href="/legal">
               <a
                 target="_blanc"
-                className="mt-8 text-base leading-6 text-gray-400 md:mt-0 md:order-1 hover:text-gray-300 transition ease-in-out duration-300"
+                className="mt-8 text-base leading-6 text-gray-300 md:mt-0 md:order-1 hover:text-gray-400 transition ease-in-out duration-300"
               >
                 Impressum und Datenschutz
               </a>
@@ -395,7 +403,7 @@ const AusstattungItem = (item: IAusstattungItem) => (
       <span className="">{item.title}</span>
     </div>
     {item.details && (
-      <ul className="pt-4 text-gray-500">
+      <ul className="pt-4 text-gray-600">
         {item.details.map((a, i) => (
           <li key={i}>{a}</li>
         ))}

@@ -1,0 +1,5 @@
+# robots.txt zu http://www.ferienwohnung-keltern.de/
+
+User-agent: *
+Disallow: /danke
+Disallow: /legal
