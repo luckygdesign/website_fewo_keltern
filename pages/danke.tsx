@@ -1,8 +1,16 @@
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>Ferienwohnung in Keltern - Danke für Ihre Anfrage</title>
+        <meta
+          name="description"
+          content="Ferienwohnung für zwei Personen im Weinbaugebiet Keltern (in der Nähe von Pfrozheim und dem Nordschwarzwald). Mit ausgestatteter Küche, WLAN und Parkplatz."
+        />
+      </Head>
       <div className="relative lg:bg-gray-200">
         <main className="lg:relative">
           <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
