@@ -1,8 +1,16 @@
 import Link from "next/link";
+import Head from "next/head";
 
 const LegalPage = () => {
   return (
     <div>
+      <Head>
+        <title>Ferienwohnung in Keltern - Impressum und Datenschutz</title>
+        <meta
+          name="description"
+          content="Ferienwohnung für zwei Personen im Weinbaugebiet Keltern (in der Nähe von Pfrozheim und dem Nordschwarzwald). Mit ausgestatteter Küche, WLAN und Parkplatz."
+        />
+      </Head>
       <div className="py-32 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
