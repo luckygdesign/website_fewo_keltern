@@ -433,6 +433,6 @@ const images: IImage[] = [
 
 const ImageThumb = (img: IImage) => (
   <div className="rounded-lg shadow-sm overflow-hidden self-start">
-    <img src={`/img/${img.src}`} alt={img.alt} />
+    <img src={`/img/thumb/${img.src}`} alt={img.alt} />
   </div>
 );
