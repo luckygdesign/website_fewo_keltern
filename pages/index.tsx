@@ -118,7 +118,7 @@ export default function Home() {
             <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
               Räume
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {ausstattungRaeume.map((a, i) => (
                 <AusstattungItem {...a} key={i} />
               ))}
@@ -128,7 +128,7 @@ export default function Home() {
             <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
               Merkmale
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {ausstattungMerkmale.map((a, i) => (
                 <AusstattungItem {...a} key={i} />
               ))}
@@ -138,7 +138,7 @@ export default function Home() {
             <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
               Buchung
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {ausstattungBuchung.map((a, i) => (
                 <AusstattungItem {...a} key={i} />
               ))}
