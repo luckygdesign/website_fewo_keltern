@@ -14,7 +14,7 @@ module.exports = {
       },
     }),
   },
-  plugins: [require("@tailwindcss/ui")],
+  plugins: [require("@tailwindcss/ui"), require("tailwindcss-multi-column")()],
   future: {
     removeDeprecatedGapUtilities: true,
   },

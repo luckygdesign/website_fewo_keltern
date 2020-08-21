@@ -96,7 +96,7 @@ export default function Home() {
       <div className="py-16 sm:py-32 bg-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 mb-12 lg:mb-0">
-            <div style={{ columnCount: 3 }} className="space-y-3">
+            <div className="space-y-3 md:col-count-2 lg:col-count-3">
               {images.map((a, i) => (
                 <ImageThumb {...a} key={i} />
               ))}
