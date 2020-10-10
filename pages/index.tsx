@@ -17,6 +17,8 @@ import {
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Link from "next/link";
 import Head from "next/head";
+import { CarouselProvider, Slide, Slider } from "pure-react-carousel";
+import React from "react";
 
 export default function Home() {
   return (
@@ -53,55 +55,20 @@ export default function Home() {
           </div>
           <div className="relative w-full h-64 sm:h-64 md:h-72 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
             <img
-              className="absolute inset-0 w-full h-full object-cover"
+              className="hidden md:block absolute inset-0 w-full h-full object-cover"
               src="/img/img05.jpg"
               alt="Blick in das Wohnzimmer"
             />
+            <div className="md:hidden">
+              <Carousel slides={images} />
+            </div>
           </div>
         </main>
       </div>
-      <div className="py-16 sm:py-32 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative">
-            <div className="prose text-gray-500 mx-auto lg:prose-lg lg:max-w-none">
-              <p>
-                Unsere Ferienwohnung ist 60 m² groß und besteht aus einer Küche
-                mit Essbereich, Bad, sowie einem Wohn/Schlafbereich mit einer
-                Schlaf-Couch: tagsüber Sofa mit Sitzkomfort, nachts ein Bett 160
-                x 190 cm (extra Matraze, nicht die Sitzfläche vom Sofa!),
-                Wohnschrankwand, kleiner Beistelltisch. Vor dem Wohnzimmer
-                befindet sich ein kleiner Dachgarten. Dieser gehört zur
-                Nachbar-Wohnung und kann nach Absprache mit dem Eigentümer
-                mitbenutzt werden.
-              </p>
-              <p>
-                Die Ferienwohnung liegt in einer Seitenstraße. Parkplatz am
-                Haus. Unter Ihr befindet sich eine Backstube. In dieser wird in
-                der Regel nur von Freitag auf Samstag gebacken. Dann sind mit
-                Maschinen- und Arbeits-Geräuschen zu rechnen.
-              </p>
-              <p>
-                Keltern ist ein Gemeindezusammenschluss von 5 Teilorten:
-                Dietlingen, Ellmendingen, Weiler, Niebelsbach und Dietenhausen
-                und hat ca.9000 Einwohner. In allen Orten gibt es eine
-                Wein-Kelter! Zwischen Dietlingen und Ellmendingen erstrecken
-                sich Weinberge mit den bekannten Schwarzriesling-Trauben, aber
-                auch Spätburgunder und Müller Thurgau wird angebaut. Die
-                Weinberge laden zu ausgiebigen Wanderungen ein. Ebenso die
-                Streuobstwiesen und Laub/Mischwälder. In den Scharzwald gelangt
-                man über Niebelsbach/ Straubenhardt/ Dobel, aber auch die
-                Goldstadt Pforzheim, die badische "Hauptstadt" Karlsruhe,
-                Etllingen, Rastatt sind nicht weit.Überquert man den Rhein, ist
-                man in der Pfalz oder im Elsaß und den Vogesen. Mehr Infos:{" "}
-                <a href="https://www.keltern.de" target="_blanc">
-                  www.keltern.de
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="py-16 bg-gray-50 overflow-hidden">
+        <Home.Ausstattung />
       </div>
-      <div className="py-16 sm:py-32 bg-gray-100 overflow-hidden">
+      <div className="hidden sm:block py-16 bg-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 mb-12 lg:mb-0">
             <div className="space-y-3 md:col-count-2 lg:col-count-3">
@@ -112,39 +79,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className="py-16 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="">
-            <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
-              Räume
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ausstattungRaeume.map((a, i) => (
-                <AusstattungItem {...a} key={i} />
-              ))}
-            </div>
-          </div>
-          <div className="">
-            <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
-              Merkmale
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ausstattungMerkmale.map((a, i) => (
-                <AusstattungItem {...a} key={i} />
-              ))}
-            </div>
-          </div>
-          <div className="">
-            <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
-              Buchung
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ausstattungBuchung.map((a, i) => (
-                <AusstattungItem {...a} key={i} />
-              ))}
-            </div>
-          </div>
-        </div>
+        <Home.Text />
       </div>
       <div className="relative bg-gray-700 pb-16 pt-16 px-4 sm:px-6 lg:px-8">
         <div
@@ -422,17 +359,155 @@ const images: IImage[] = [
   { src: "img03.jpg", alt: "Küche" },
   { src: "img06.jpg", alt: "Sideboard" },
   { src: "img09.jpg", alt: "Sofa" },
+  { src: "img26.jpg", alt: "Blick Richtung Bad" },
   { src: "img13.jpg", alt: "Waschbecken mit Spiegel und Ablage" },
+  { src: "img30.jpg", alt: "moderne Sidebar im Wohnzimmer" },
   { src: "img14.jpg", alt: "moderne, barrierefreie Dusche" },
   { src: "img17.jpg", alt: "Sofa als Bett" },
   { src: "img16.jpg", alt: "Fenster im Wohnzimmer" },
+  { src: "img29.jpg", alt: "moderne, gut ausgestattete Küche" },
   { src: "img18.jpg", alt: "Dachterasse" },
   { src: "img20.jpg", alt: "Eingang zum Bad" },
   { src: "img07.jpg", alt: "Blick auf Dachterasse" },
+  { src: "img27.jpg", alt: "Blick Richtung Fenster" },
 ];
+const IMG_BASE_URL = "/img/thumb/";
 
 const ImageThumb = (img: IImage) => (
   <div className="rounded-lg shadow-sm overflow-hidden self-start">
-    <img src={`/img/thumb/${img.src}`} alt={img.alt} />
+    <img src={IMG_BASE_URL + img.src} alt={img.alt} />
   </div>
 );
+
+Home.Ausstattung = () => (
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div className="">
+      <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
+        Räume
+      </h3>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ausstattungRaeume.map((a, i) => (
+          <AusstattungItem {...a} key={i} />
+        ))}
+      </div>
+    </div>
+    <div className="">
+      <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
+        Merkmale
+      </h3>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ausstattungMerkmale.map((a, i) => (
+          <AusstattungItem {...a} key={i} />
+        ))}
+      </div>
+    </div>
+    <div className="">
+      <h3 className="text-lg pb-8 leading-6 font-medium text-gray-900">
+        Buchung
+      </h3>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ausstattungBuchung.map((a, i) => (
+          <AusstattungItem {...a} key={i} />
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const links = [
+  {
+    title: "Stadt Keltern",
+    href: "https://www.keltern.de",
+  },
+  {
+    title: "Stadt Pforzheim",
+    href: "https://www.pforzheim.de",
+  },
+  {
+    title: "Stadt Karlsruhe",
+    href: "https://www.karlsruhe.de",
+  },
+  {
+    title: "Enzkreis",
+    href: "https://www.enzkreis.de",
+  },
+];
+
+Home.Text = () => (
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative">
+      <div className="prose text-gray-500 mx-auto lg:prose-lg lg:max-w-none">
+        <p>
+          Unsere Ferienwohnung ist 60 m² groß und besteht aus einer Küche mit
+          Essbereich, Bad, sowie einem Wohn/Schlafbereich mit einer
+          Schlaf-Couch: tagsüber Sofa mit Sitzkomfort, nachts ein Bett 160 x 190
+          cm (extra Matraze, nicht die Sitzfläche vom Sofa!), Wohnschrankwand,
+          kleiner Beistelltisch. Vor dem Wohnzimmer befindet sich ein kleiner
+          Dachgarten. Dieser gehört zur Nachbar-Wohnung und kann nach Absprache
+          mit dem Eigentümer mitbenutzt werden. .
+        </p>
+        <p>
+          Die Ferienwohnung liegt in einer Seitenstraße. Parkplatz am Haus. Im
+          Erdgeschoß befindet sich eine tradionelle Handwerks-Bäckerei.
+        </p>
+        <p>Weitere Informationen unter:</p>
+        <ul>
+          {links.map((l, i) => (
+            <HomeTextLink key={i} {...l} />
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+);
+
+const HomeTextLink = ({ title, href }: { title: string; href: string }) => (
+  <li>
+    <a href={href} target="_blanc">
+      {title}
+    </a>
+  </li>
+);
+
+const Carousel = ({ slides }: { slides: IImage[] }) => {
+  return (
+    <CarouselProvider
+      naturalSlideWidth={300}
+      naturalSlideHeight={200}
+      totalSlides={slides.length}
+      infinite
+      isPlaying
+    >
+      <Slider>
+        {slides.map((s, i) => (
+          <Carousel.Slide
+            key={i}
+            index={i}
+            img={IMG_BASE_URL + s.src}
+            text={s.alt}
+          />
+        ))}
+      </Slider>
+    </CarouselProvider>
+  );
+};
+
+Carousel.Slide = ({
+  index,
+  text,
+  img,
+}: {
+  index: number;
+  text: string;
+  img: string;
+}) => {
+  return (
+    <Slide index={index}>
+      <div
+        className="w-full h-full bg-center bg-cover"
+        aria-label={text}
+        style={{ backgroundImage: `url(${img})` }}
+      ></div>
+    </Slide>
+  );
+};

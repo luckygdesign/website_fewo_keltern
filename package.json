@@ -17,6 +17,7 @@
     "next": "9.5.2",
     "postcss-loader": "^3.0.0",
     "postcss-nesting": "^7.0.1",
+    "pure-react-carousel": "^1.27.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tailwindcss": "^1.5.1",
