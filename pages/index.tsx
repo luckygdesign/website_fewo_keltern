@@ -506,7 +506,7 @@ Carousel.Slide = ({
       <div
         className="w-full h-full bg-center bg-cover"
         aria-label={text}
-        style={{ backgroundImage: `url(${img})` }}
+        style={{ backgroundImage: `url(${img})`, touchAction: "pan-x" }}
       ></div>
     </Slide>
   );
