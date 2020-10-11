@@ -355,15 +355,12 @@ type IImage = {
 };
 
 const images: IImage[] = [
-  { src: "img01.jpg", alt: "Esstisch mit 2 Stühlen und Bank" },
+  { src: "img30.jpg", alt: "moderne Sidebar im Wohnzimmer" },
   { src: "img03.jpg", alt: "Küche" },
   { src: "img06.jpg", alt: "Sideboard" },
   { src: "img09.jpg", alt: "Sofa" },
   { src: "img26.jpg", alt: "Blick Richtung Bad" },
   { src: "img13.jpg", alt: "Waschbecken mit Spiegel und Ablage" },
-  { src: "img30.jpg", alt: "moderne Sidebar im Wohnzimmer" },
-  { src: "img14.jpg", alt: "moderne, barrierefreie Dusche" },
-  { src: "img17.jpg", alt: "Sofa als Bett" },
   { src: "img16.jpg", alt: "Fenster im Wohnzimmer" },
   { src: "img29.jpg", alt: "moderne, gut ausgestattete Küche" },
   { src: "img18.jpg", alt: "Dachterasse" },
@@ -416,7 +413,7 @@ Home.Ausstattung = () => (
 
 const links = [
   {
-    title: "Stadt Keltern",
+    title: "Gemeinde Keltern",
     href: "https://www.keltern.de",
   },
   {
@@ -428,8 +425,12 @@ const links = [
     href: "https://www.karlsruhe.de",
   },
   {
-    title: "Enzkreis",
+    title: "Landkreis Enzkreis",
     href: "https://www.enzkreis.de",
+  },
+  {
+    title: "Schwarzwald Tourismus",
+    href: "https://www.schwarzwald-tourismus.info",
   },
 ];
 
